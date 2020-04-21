@@ -46,7 +46,8 @@ module.exports = function (ctx) {
 
       components: [
         'QBtn',
-        'QBadge'
+        'QBadge',
+        'QIntersection'
       ],
       directives: [],
 
