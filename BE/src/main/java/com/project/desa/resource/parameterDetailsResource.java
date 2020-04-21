@@ -1,6 +1,5 @@
-package com.pefindo.score.resource;
+package com.project.desa.resource;
 
-import com.pefindo.score.model.parameterDetails;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -15,6 +14,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
+
+import com.project.desa.model.parameterDetails;
 @Path("/parameterDetails")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

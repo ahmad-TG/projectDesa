@@ -1,4 +1,4 @@
-package com.pefindo.score.resource;
+package com.project.desa.resource;
 
 import java.util.List;
 
@@ -13,37 +13,47 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.pefindo.score.model.reasons;
-
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
+
+import com.project.desa.model.members;
+import com.project.desa.model.models;
 /**
- * ReasonsResource
+ * modelsResource
  */
-@Path("/Reasons")
+
+    
+@Path("/models")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class reasonsResource {
+public class modelsResource {
 
     @GET
     @Path("/get")
-    public List<reasons> getall(){
-        return reasons.listAll();
+    public List<models> getall() {
+        return models.listAll();
+    }
+    
+    @GET
+    @Transactional
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public models id(@PathParam Long id){
+        return models.findById(id);
     }
 
     @POST
     @Transactional
     @Path("/post")
-    public Response add(reasons item) {
+    public Response add(models item){
         item.persist();
         return Response.ok(item).status(201).build();
     }
-
 
     @DELETE
     @Transactional
     @Path("/{id}")
     public Response deleteOne(@PathParam("id") Long id) {
-        reasons entity = reasons.findById(id);
+        models entity = models.findById(id);
         entity.delete();
         return Response.status(204).build();
     }
@@ -51,10 +61,14 @@ public class reasonsResource {
     @PATCH
     @Transactional
     @Path("/{id}")
-    public Response update(reasons item, @PathParam("id") Long id) {
-        reasons entity = reasons.findById(id);
-        entity.code = item.code;
-        entity.description = item.description;
+    public Response update(models item, @PathParam("id") Long id) {
+        models entity = models.findById(id);
+        entity.nama = item.nama;
+        entity.endpointTradisional = item.endpointTradisional;
+        entity.endpointAi = item.endpointAi;
+        entity.endpointBre = item.endpointBre;
+        entity.baseScore = item.baseScore;
+        entity.icons = item.icons;
         entity.id=id;
         return Response.ok(entity).status(200).build();
     }

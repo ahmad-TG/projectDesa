@@ -1,6 +1,5 @@
-package com.pefindo.score.resource;
+package com.project.desa.resource;
 
-import com.pefindo.score.model.users;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -16,6 +15,8 @@ import javax.ws.rs.core.Response;
 
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
+import com.project.desa.model.users;
+
 /**
  * ToDoResource
  */
@@ -23,6 +24,7 @@ import org.jboss.resteasy.annotations.jaxrs.PathParam;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class usersResource {
+	
     @GET
     @Path("/get")
     public List<users> getall(){
@@ -61,14 +63,15 @@ public class usersResource {
         return Response.ok(entity).status(200).build();
     }
 
-    @GET
+    @POST
     @Transactional
-    @Path("/{label}")
+    @Path("/getByName")
     @Produces(MediaType.APPLICATION_JSON)
-    public users nama(@PathParam String nama){
+    public users nama(String nama){
         return users.findByNama(nama);
     }
-
+    
+   
     @GET
     @Transactional
     @Path("/{id}")

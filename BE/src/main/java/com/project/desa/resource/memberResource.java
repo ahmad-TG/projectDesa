@@ -1,6 +1,4 @@
-package com.pefindo.score.resource;
-
-import com.pefindo.score.model.members;
+package com.project.desa.resource;
 
 import java.util.List;
 
@@ -16,6 +14,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
+
+import com.project.desa.model.members;
 
 /**
  * ToDoResource

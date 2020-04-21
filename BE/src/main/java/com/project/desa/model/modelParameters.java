@@ -1,4 +1,4 @@
-package com.pefindo.score.model;
+package com.project.desa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

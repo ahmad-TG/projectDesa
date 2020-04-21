@@ -11,7 +11,7 @@ const routes = [
     component: () => import('layouts/MainLayoutcopy.vue'),
     children: [
       { path: '', component: () => import('pages/home/index.vue') },
-      { path: 'profile', component: () => import('pages/profile/index.vue') },
+      { path: 'statistik', component: () => import('pages/profile/index.vue') },
       { path: 'teacher', component: () => import('pages/teacher/index.vue') },
       { path: 'student', component: () => import('pages/student/index.vue') },
 
