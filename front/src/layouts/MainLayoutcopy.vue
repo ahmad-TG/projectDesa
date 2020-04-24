@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fff">
 
-    <q-header elevated class="bg-primary text-white" style="height:75px">
+    <q-header elevated class="bg-green-7 text-white" style="height:75px">
       <div class="row items-center" style="margin-left:15px; margin-top:6px">
         <div class="col-auto" style="width:160px;">
           <q-img @click="$router.replace('home')" src="../statics/logo.png"/>
@@ -46,13 +46,12 @@
 
     <div style="height:50px"/>
 
-    <q-footer class="bg-primary text-white">
+    <q-footer class="bg-green-7 text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+            
           </q-avatar>
-          Title
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
