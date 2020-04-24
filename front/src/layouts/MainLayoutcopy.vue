@@ -44,6 +44,8 @@
       <router-view />
     </q-page-container>
 
+    <div style="height:50px"/>
+
     <q-footer class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
